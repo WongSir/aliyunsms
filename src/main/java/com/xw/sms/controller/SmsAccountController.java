@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.xw.sms.entity.SmsAccountEntity;
@@ -29,7 +30,7 @@ public class SmsAccountController {
 	@Autowired
 	private SmsAccountService smsAccountService;	
 	
-	@RequestMapping(value="/account/setaccount")
+	@RequestMapping(value="/account/setaccount",method = RequestMethod.POST)
 	public ResultData setSmsAccount(@RequestBody SmsAccountEntity smsAccount){
 		ResultData rd = new ResultData();
 		//获取当前时间
